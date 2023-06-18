@@ -118,10 +118,10 @@
           var videoElement = document.getElementById("video");
       
           function showOptions(option) {
-            // 隐藏动态表单中的旧按钮
+
             dynamicForm.style.display = "none";
       
-            // 根据用户选择的选项显示对应的选项按钮
+
             if (option === "肩頸痛") {
               optionsContainer.innerHTML = `
                 <button class="btn btn-outline-success mb-0 btn-lg" onclick="showOptions('肩頸相接的地方')">肩頸相接的地方</button><br><br>
@@ -190,7 +190,10 @@
 
             //刪除title
             let elementToRemove = document.getElementById("title");
-            // 根据用户选择的选项计算结果
+            if (elementToRemove) {
+              elementToRemove.remove();
+            }
+            
             var answer;
             if (option === "肩膀超酸") {
               answer = "你的問題是：上斜方肌，肩胛提肌 ";
@@ -247,10 +250,9 @@
               answer = "默认答案";
             }
             
-            
-            // 隐藏选项按钮
+
             optionsContainer.style.display = "none";
-            // 显示结果
+
             resultContainer.style.display = "block";
             answerElement.textContent = answer;
             videoElement.textContent = video;
