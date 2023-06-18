@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Hello, world!</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <!-- Material Kit CSS -->
+  <link href="assets/css/material-kit.css?v=3.0.0" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Navbar Transparent -->
+  <nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3 navbar-transparent">
+    <div class="container">
+      <a class="navbar-brand  text-white " href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
+        日常疼痛測驗
+      </a>
+      <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon mt-2">
+          <span class="navbar-toggler-bar bar1"></span>
+          <span class="navbar-toggler-bar bar2"></span>
+          <span class="navbar-toggler-bar bar3"></span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0 ms-lg-12 ps-lg-5" id="navigation">
+        <ul class="navbar-nav navbar-nav-hover ms-auto">
+          <li class="nav-item dropdown dropdown-hover mx-2 ms-lg-6">
+            <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuPages2" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="material-icons opacity-6 me-2 text-md">dashboard</i>
+              Pages
+              <img src="./assets/img/down-arrow-white.svg" alt="down-arrow" class="arrow ms-auto ms-md-2 d-lg-block d-none">
+              <img src="./assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2 d-lg-none d-block">
+            </a>
+          </li>
+
+          <li class="nav-item dropdown dropdown-hover mx-2">
+            <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="material-icons opacity-6 me-2 text-md">view_day</i>
+              Sections
+              <img src="./assets/img/down-arrow-white.svg" alt="down-arrow" class="arrow ms-auto ms-md-2 d-lg-block d-none">
+              <img src="./assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2 d-lg-none d-block">
+            </a>
+          </li>
+
+          <li class="nav-item dropdown dropdown-hover mx-2">
+            <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="material-icons opacity-6 me-2 text-md">article</i>
+              Docs
+              <img src="./assets/img/down-arrow-white.svg" alt="down-arrow" class="arrow ms-auto ms-md-2 d-lg-block d-none">
+              <img src="./assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2 d-lg-none d-block">
+            </a>
+          </li>
+          <li class="nav-item ms-lg-auto my-auto ms-3 ms-lg-0 mt-2 mt-lg-0">
+            <a href="https://github.com/horseface1110" class="btn btn-sm  bg-gradient-primary mb-0 me-1 mt-2 mt-md-0">MY github</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+
+
+  <div class="page-header min-vh-80" style="background-image: url('https://images.unsplash.com/photo-1630752708689-02c8636b9141?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2490&q=80')">
+    <span class="mask bg-gradient-dark opacity-6"></span>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="text-center">
+            <h1 class="text-white">吳仲倫的日疼檢視網站</h1>
+            <h3 class="text-white">F74102226</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
+    <div class="container">
+      <div class="section text-center">
+        <br>
+        <h2 class="title">請問是哪痛呢？</h2>
+        <div id="button-container">
+          <div class="row text-center py-3 mt-3">
+            <div class="col-12 mx-auto" id="button-container">
+              <button type="button" class="btn btn-outline-primary mb-0 btn-lg" onclick="generateButtons(1)">上肢痛</button><br><br>
+              <button type="button" class="btn btn-outline-secondary mb-0 btn-lg" onclick="generateButtons(2)">軀幹痛</button><br><br>
+              <button type="button" class="btn btn-outline-info mb-0 btn-lg"onclick="selectOption(2)">下肢痛</button><br><br>
+              <button type="button" class="btn btn-outline-warning mb-0 btn-lg"onclick="selectOption(3)">肩頸痛</button><br><br>
+            </div>
+            <div id="result-container" style="display: none;">
+              <h2 id="result">结果</h2>
+              <p id="result-description">结果描述</p>
+            </div>  
+          </div>
+        </div>
+        
+
+
+      
+        <script>
+          var numGenerations = 2;
+          var selectedButtons = [];
+      
+          function generateButtons(buttonNum) {
+            selectedButtons.push(buttonNum);
+            var buttonContainer = document.getElementById("button-container");
+            buttonContainer.innerHTML = "";
+      
+            if (selectedButtons.length >= numGenerations) {
+              showResult();
+            } else {
+              if (buttonNum === 1) {
+                changeTitleText("蝦？")
+                createButton("我好笨");
+                createButton("尼不笨");
+              } else if (buttonNum === 2) {
+                changeTitleText("嘿嘿")
+                createButton("嗨嗨");
+                createButton("你好");
+              }
+            }
+          }
+
+          function changeTitleText(newText) {
+            let titleElement = document.querySelector(".title");
+            if (titleElement) {
+              titleElement.textContent = newText;
+            }
+          }
+      
+          function createButton(text) {
+            let randomInt = Math.floor(Math.random() * 10) + 1;
+            var button = document.createElement("button");
+            button.textContent = text;
+            button.setAttribute("onclick", "generateButtons(" + (selectedButtons.length + 1) + ")");
+
+            if (randomInt % 10 == 0) {
+              button.className = "btn btn-outline-primary mb-0 btn-lg"; // 添加 Bootstrap 的按钮类名
+            } else if(randomInt % 10 == 1){
+              button.className = "btn btn-outline-secondary mb-0 btn-lg"; // 添加 Bootstrap 的按钮类名
+            } else if(randomInt % 10 == 2){
+              button.className = "btn btn-outline-info mb-0 btn-lg"; // 添加 Bootstrap 的按钮类名
+            } else if(randomInt % 10 == 3){
+              button.className = "btn btn-outline-success mb-0 btn-lg"; // 添加 Bootstrap 的按钮类名
+            } else if(randomInt % 10 == 4){
+              button.className = "btn btn-outline-warning mb-0 btn-lg"; // 添加 Bootstrap 的按钮类名
+            } else if(randomInt % 10 == 5){
+              button.className = "btn btn-outline-danger mb-0 btn-lg"; // 添加 Bootstrap 的按钮类名
+            } else if(randomInt % 10 == 6){
+              button.className = "btn btn-outline-warning mb-0 btn-lg"; // 添加 Bootstrap 的按钮类名
+            } else if(randomInt % 10 == 7){
+              button.className = "btn btn-outline-dark btn-lg"; // 添加 Bootstrap 的按钮类名
+            } else if(randomInt % 10 == 8){
+              button.className = "btn btn-outline-success btn-lg"; // 添加 Bootstrap 的按钮类名
+            } else if(randomInt % 10 == 9){
+              button.className = "btn btn-outline-info mb-0 btn-lg"; // 添加 Bootstrap 的按钮类名
+            }
+            
+
+            
+            var buttonContainer = document.getElementById("button-container");
+            buttonContainer.appendChild(button);
+            // 創建換行元素
+            let lineBreak = document.createElement("br");
+            // 將換行元素添加到容器中
+            buttonContainer.appendChild(document.createElement("br"));
+          }
+      
+          function showResult() {
+            var buttonContainer = document.getElementById("button-container");
+            buttonContainer.innerHTML = ""; // 清空按钮容器
+      
+            var resultContainer = document.createElement("div");
+            resultContainer.id = "result-container";
+            var resultElement = document.createElement("h2");
+            resultElement.id = "result";
+            var resultDescriptionElement = document.createElement("p");
+            resultDescriptionElement.id = "result-description";
+      
+            var conclusion = getConclusion();
+            resultElement.textContent = conclusion.title;
+            resultDescriptionElement.textContent = conclusion.description;
+      
+            resultContainer.appendChild(resultElement);
+            resultContainer.appendChild(resultDescriptionElement);
+      
+            var body = document.getElementsByTagName("body")[0];
+            body.appendChild(resultContainer);
+          }
+      
+          function getConclusion() {
+            // 根据用户按下的按钮生成结论
+            // 这里可以根据你的需求编写逻辑来生成结论
+            // 以下只是一个示例，可以根据你的实际情况进行修改
+      
+            var total = selectedButtons.reduce(function(sum, buttonNum) {
+              return sum + buttonNum;
+            }, 0);
+      
+            if (total === 1) {
+              return {
+                title: "結論1",
+                description: "結論1的描述"
+              };
+            } else if (total === 2) {
+              return {
+                title: "結論2",
+                description: "結論2的描述"
+              };
+            } else {
+              return {
+                title: "結論3",
+                description: "結論3的描述"
+              };
+            }
+          }
+        </script>
+        
+        
+          
+      </div>
+    </div>
+  </div>
+
+  
+  
+</body>
+
+</html>
